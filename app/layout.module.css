@@ -1,0 +1,22 @@
+.topLevelHeader {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  /* outline: 1px solid red; */
+}
+
+.topLevelNav {
+  color: white;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.topLevelNav a {
+  padding: 1rem;
+  font-size: 20px;
+  /* transition: all 0.5s; */
+}
+
+.topLevelNav a:hover {
+  color: var(--primarygreen);
+}

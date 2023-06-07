@@ -45,11 +45,11 @@ export default function TestRoute() {
         camera={{ fov: 50, near: 0.1, far: 1000, position: [-6, 0, -6] }}>
           <Lights></Lights>
           <Controls></Controls>
-          {/* <Shape></Shape> */}
-          <Shape2></Shape2>
+          <Shape></Shape>
+          {/* <Shape2></Shape2> */}
           <mesh position={[-0, 0, -5]} rotation-y={Math.PI * 1.27} rotation-x={Math.PI * -0}>
-            {/* <Text2></Text2>
-            <Text1></Text1> */}
+            <Text2></Text2>
+            <Text1></Text1>
           </mesh>
           {/* <mesh position={[1, 0, 0]} rotation-y={Math.PI * 1.5}>
             <planeGeometry args={[120, 60, 32, 32]}></planeGeometry>
