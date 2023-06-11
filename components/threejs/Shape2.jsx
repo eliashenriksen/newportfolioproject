@@ -31,9 +31,6 @@ export default function Shape2() {
   return(
     <mesh ref={shapeRef} position={[-3.8, -0.5, -2]} rotation-x={Math.PI * 0} rotation-y={Math.PI * 1.1}>
       {/* <sphereGeometry args={[2, 32, 16]}></sphereGeometry> */}
-      <Text font="/NothingYouCouldDo-Regular.ttf" position={[0.1, -0.35, 0]} fontSize={0.03} color="#03fcb6">
-        Yup, thats a model of my face
-      </Text>
       <Model></Model>
       <EffectComposer>
         <ChromaticAberration offset={[0.001, 0.001]}></ChromaticAberration>

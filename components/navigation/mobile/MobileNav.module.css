@@ -1,0 +1,99 @@
+.mobileNavHolder {
+  background-color: #24243854;
+  backdrop-filter: blur(20px);
+  display: none;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-right: 200rem;
+  transition: all 1s;
+}
+
+.mobileNav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  padding: 1rem;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.mobileNav a:hover {
+  color: var(--primarygreen);
+}
+
+.mobileHamburgerHolder {
+  display: none;
+  /* display: flex; */
+  flex-direction: column;
+  position: sticky;
+  top: 24px;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 100;
+  height: 59px;
+}
+
+.mobileHamburgerHolder:hover {
+  cursor: pointer;
+}
+
+.mobileHamburgerHolder:hover .mobileHamburgerMenuBar1 {
+  background-color: var(--primarygreen);
+}
+
+.mobileHamburgerHolder:hover .mobileHamburgerMenuBar2 {
+  background-color: var(--primarygreen);
+}
+
+.mobileHamburgerMenuBar1,
+.mobileHamburgerMenuBar2 {
+  width: 40px;
+  height: 3px;
+  margin-right: 2rem;
+  background-color: rgb(255, 255, 255);
+  transition: all 1s;
+}
+
+.mobileHamburgerMenuBar1 {
+  margin-bottom: 12px;
+}
+
+.mobileHamburgerMenuBar1Toggled, .mobileHamburgerMenuBar2Toggled {
+  background-color: var(--primarygreen);
+  transition: all 0.5s ease-in-out;
+}
+
+.mobileHamburgerMenuBar1Toggled {
+  transform: rotate(45deg);
+  margin-bottom: -3px;
+}
+.mobileHamburgerMenuBar2Toggled {
+  transform: rotate(-45deg);
+}
+
+@media only screen and (max-width: 599px) {
+  .mobileHamburgerHolder {
+    display: flex;
+  }
+
+  .mobileNavHolder {
+    display: flex;
+  }
+}

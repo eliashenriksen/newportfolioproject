@@ -8,7 +8,6 @@ import { Model } from "@/public/Landingpagemodel";
 
 
 export default function Shape() {
-
   //https://codesandbox.io/s/github/onion2k/r3f-by-example/tree/develop/examples/hooks/rotating-cube
   const shapeRef = useRef();
   useFrame(() => {
@@ -16,7 +15,7 @@ export default function Shape() {
   });
 
   return(
-    <mesh ref={shapeRef} position={[-3, 0, -1.2]} rotation-x={Math.PI * 0.25} rotation-y={Math.PI * 0.25}>
+    <mesh ref={shapeRef} position={[-3.5, 0, -1]} rotation-x={Math.PI * 0.25} rotation-y={Math.PI * 0.25}>
       {/* <sphereGeometry args={[2, 32, 16]}></sphereGeometry> */}
       <Model></Model>
       <EffectComposer>

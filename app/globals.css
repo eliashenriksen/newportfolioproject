@@ -12,15 +12,16 @@
 
 html,
 body {
+  font-family: var(--fontPoppins);
   max-width: 100vw;
-  overflow-x: hidden;
   margin: 0px;
+  min-height: 200vh;
 }
 
 body {
   background-color: var(--backgroundpurple);
-  padding-left: 10rem;
-  padding-right: 10rem;
+  padding-left: 15rem;
+  padding-right: 15rem;
 }
 
 body::-webkit-scrollbar {
@@ -40,4 +41,50 @@ a {
   text-decoration: none;
 }
 
+p {
+  max-width: 50rem;
+  color: white;
+  font-family: var(--fontPoppins);
+  font-weight: 200;
+  margin-bottom: 5rem;
+}
 
+::selection {
+  color: var(--backgroundpurple);
+  background: var(--primarygreen);
+}
+
+@media only screen and (max-width: 1400px) {
+  body {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  body {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  body {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  body {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

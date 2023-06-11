@@ -42,14 +42,14 @@ export default function TestRoute() {
       <Canvas
         shadows
         className={styles.canvas}
-        camera={{ fov: 50, near: 0.1, far: 1000, position: [-6, 0, -6] }}>
+        camera={{ fov: 50, near: 0.1, far: 100, position: [-5.5, 0, -6] }}>
           <Lights></Lights>
           <Controls></Controls>
-          <Shape></Shape>
-          {/* <Shape2></Shape2> */}
-          <mesh position={[-0, 0, -5]} rotation-y={Math.PI * 1.27} rotation-x={Math.PI * -0}>
-            <Text2></Text2>
-            <Text1></Text1>
+          {/* <Shape></Shape> */}
+          <Shape2></Shape2>
+          <mesh position={[-1, 0, -5]} rotation-y={Math.PI * 1.26} rotation-x={Math.PI * -0}>
+            {/* <Text2></Text2>
+            <Text1></Text1> */}
           </mesh>
           {/* <mesh position={[1, 0, 0]} rotation-y={Math.PI * 1.5}>
             <planeGeometry args={[120, 60, 32, 32]}></planeGeometry>
@@ -63,6 +63,7 @@ export default function TestRoute() {
           </mesh> */}
           {/* <Environment files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/dancing_hall_1k.hdr" background blur={1}></Environment> */}
       </Canvas>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dolor dolores aliquam est ipsum illo pariatur, odit amet nesciunt repellendus. Laborum odit ratione quia quaerat temporibus quibusdam aspernatur voluptatum laudantium.</p>
     </div>
   )
 }

@@ -1,13 +1,16 @@
 .scene {
-  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  /* outline: 1px solid rgb(60, 255, 0); */
 }
 
 .canvas {
   opacity: 1;
+  /* outline: 1px solid red; */
+  z-index: -99;
 }
 
 .testdiv {

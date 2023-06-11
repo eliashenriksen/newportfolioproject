@@ -4,17 +4,17 @@ export default function Text1() {
 
   return(
     <Text3D 
-    font={"/Ubuntu_Regular.json"}
+    font={"/Poppins_Regular.json"}
     color={"#ffffff"}
     curveSegments={10}
     bevelEnabled
     bevelSize={0.04}
     bevelThickness={0.05}
     height={0.1}
-    lineHeight={0.7}
-    letterSpacing={-0.03}
+    lineHeight={0.52  }
+    letterSpacing={0.00}
     size={0.5}>
-      {`IM ELIAS, A\n DESIGNER &\n DEVELOPER`}
+      {`IM ELIAS, A\nDESIGNER &\nDEVELOPER`}
       <meshPhysicalMaterial roughness={0} color={"#ffffff"} clearcoat={1}></meshPhysicalMaterial>
       {/* <MeshTransmissionMaterial
       attenuationColor={"#ffffff"} 

@@ -1,95 +1,69 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client"
+import styles from "./page.module.css";
+import { Canvas, useThree } from "@react-three/fiber";
+import Shape from "@/components/threejs/Shape";
+import Shape2 from "@/components/threejs/Shape2";
+import Controls from "@/components/threejs/Controls";
+import { Text, GradientTexture, Text3D } from "@react-three/drei";
+import { MeshTransmissionMaterial } from "@react-three/drei";
+import Text1 from "@/components/threejs/Text1";
+import Text2 from "@/components/threejs/Text2";
+import Lights from "@/components/threejs/Lights";
+import { createClient } from "contentful";
 
-export default function Home() {
-  return (
-    <div className={styles.main}>
-      {/* <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+export default function TestRoute() {
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+  async function getContent() {
+    const client = createClient({
+      space: `${process.env.NEXT_PUBLIC_CONTENTFUL_API_SPACE}`,
+      environment: 'master', // defaults to 'master' if not set
+      accessToken: `${process.env.NEXT_PUBLIC_CONTENTFUL_API_KEY}`
+    })
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+    try {
+      const response = await client.getEntries();
+      console.log(response);
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div> */}
+  getContent();
+
+  // client.getEntries()
+  // .then((response) => console.log(response.items))
+  // .catch(console.error)
+
+  return(
+    <div className={styles.scene}>
+      <div className={styles.testdiv}></div>
+      <Canvas
+        shadows
+        className={styles.canvas}
+        camera={{ fov: 50, near: 0.1, far: 100, position: [-5.5, 0, -6] }}>
+          <Lights></Lights>
+          <Controls></Controls>
+          <Shape></Shape>
+          {/* <Shape2></Shape2> */}
+          <mesh position={[-1, 0, -5]} rotation-y={Math.PI * 1.26} rotation-x={Math.PI * -0}>
+            <Text2></Text2>
+            <Text1></Text1>
+          </mesh>
+          {/* <mesh position={[1, 0, 0]} rotation-y={Math.PI * 1.5}>
+            <planeGeometry args={[120, 60, 32, 32]}></planeGeometry>
+            <meshBasicMaterial>
+              <GradientTexture
+              stops={[0, 0.5, 1]}
+              colors={['#302F47', '#334956', '#302F47']}
+              size={10}>
+              </GradientTexture>
+            </meshBasicMaterial>
+          </mesh> */}
+          {/* <Environment files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/dancing_hall_1k.hdr" background blur={1}></Environment> */}
+      </Canvas>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dolor dolores aliquam est ipsum illo pariatur, odit amet nesciunt repellendus. Laborum odit ratione quia quaerat temporibus quibusdam aspernatur voluptatum laudantium.</p>
     </div>
   )
 }
