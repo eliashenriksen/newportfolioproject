@@ -14,23 +14,6 @@ import { createClient } from "contentful";
 
 export default function TestRoute() {
 
-  async function getContent() {
-    const client = createClient({
-      space: `${process.env.NEXT_PUBLIC_CONTENTFUL_API_SPACE}`,
-      environment: 'master', // defaults to 'master' if not set
-      accessToken: `${process.env.NEXT_PUBLIC_CONTENTFUL_API_KEY}`
-    })
-
-    try {
-      const response = await client.getEntries();
-      console.log(response);
-
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  getContent();
 
   // client.getEntries()
   // .then((response) => console.log(response.items))
