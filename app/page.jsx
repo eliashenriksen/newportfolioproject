@@ -49,16 +49,6 @@ export default function TestRoute() {
           <Text2></Text2>
           <Text1></Text1>
         </mesh>
-        {/* <mesh position={[1, 0, 0]} rotation-y={Math.PI * 1.5}>
-          <planeGeometry args={[120, 60, 32, 32]}></planeGeometry>
-          <meshBasicMaterial>
-            <GradientTexture
-            stops={[0, 0.5, 1]}
-            colors={['#302F47', '#334956', '#302F47']}
-            size={10}>
-            </GradientTexture>
-          </meshBasicMaterial>
-        </mesh> */}
         <Stats></Stats>
       </Canvas>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dolor dolores aliquam est ipsum illo pariatur, odit amet nesciunt repellendus. Laborum odit ratione quia quaerat temporibus quibusdam aspernatur voluptatum laudantium.</p>
