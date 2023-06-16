@@ -1,4 +1,4 @@
-.scene {
+.landingSection {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -7,17 +7,56 @@
   /* outline: 1px solid rgb(60, 255, 0); */
 }
 
-.canvas {
-  opacity: 1;
+.aboutSection {
+  height: 100vh;
   /* outline: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-.testdiv {
-  width: 80vw;
-  height: 80vh;
-  position: absolute;
-  background-color: rgba(255, 253, 253, .466);
-  z-index: 10;
-  backdrop-filter: blur(10px);
-  display: none;
+.aboutSection section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.aboutSectionInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutSectionInfoGreenBackgrounds {
+  background-color: var(--primarygreen);
+  box-shadow: 0px 5px 6px #00000045;
+}
+
+.aboutSectionInfoGreenBackgrounds li::selection, .aboutSectionInfoGreenBackgrounds h3::selection {
+  color: var(--primarygreen);
+  background: var(--backgroundpurple);
+}
+
+.aboutSectionInfoGreenBackgrounds p, .aboutSectionInfoGreenBackgrounds h3, .aboutSectionInfoGreenBackgrounds ul {
+  color: var(--backgroundpurple);
+}
+
+.aboutSectionInfo section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  /* outline: 1px solid magenta; */
+  /* outline: 5px solid var(--primarygreen); */
+}
+
+.skillsList {
+  column-count: 2;
+  column-gap: 20px;
 }

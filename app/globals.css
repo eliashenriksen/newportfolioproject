@@ -44,9 +44,36 @@ a {
 p {
   max-width: 50rem;
   color: white;
-  font-family: var(--fontPoppins);
   font-weight: 200;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primarygreen);
+  margin-bottom: 0.5rem;
+  /* font-family: var(--fontNothingYouCouldDo); */
+}
+
+h3 {
+  font-size: 32px;
+}
+
+ul {
+  color: white;
+  font-weight: 200;
+  list-style: none;
+  margin-left: 1rem;
+}
+
+li::before {
+  display: inline-block;
+  text-align: center;
+  vertical-align: center;
+  content: "•";
+  font-weight: bold;
+  font-size: 16px;
+  /* color: var(--primarygreen); */
+  margin-right: 0.5rem;
 }
 
 ::selection {

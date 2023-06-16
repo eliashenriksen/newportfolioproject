@@ -1,57 +1,91 @@
 "use client"
 import styles from "./page.module.css";
-import { Canvas, useThree } from "@react-three/fiber";
-import Shape from "@/components/threejs/Shape";
-import Shape2 from "@/components/threejs/Shape2";
-import Controls from "@/components/threejs/Controls";
-import { Text, GradientTexture, Text3D } from "@react-three/drei";
-import { MeshTransmissionMaterial } from "@react-three/drei";
-import Text1 from "@/components/threejs/Text1";
-import Text2 from "@/components/threejs/Text2";
-import Lights from "@/components/threejs/Lights";
 import { createClient } from "contentful";
-import { Stats } from "@react-three/drei";
+import HomeCanvas1 from "@/components/threejs/homecanvas1/HomeCanvas1";
+import HomeCanvas2 from "@/components/threejs/homecanvas2/HomeCanvas2";
+import { useEffect, useState } from "react";
 
 
 export default function TestRoute() {
 
-  async function getContent() {
-    const client = createClient({
-      space: `${process.env.NEXT_PUBLIC_CONTENTFUL_API_SPACE}`,
-      environment: 'master', // defaults to 'master' if not set
-      accessToken: `${process.env.NEXT_PUBLIC_CONTENTFUL_API_KEY}`
-    })
+  const [aboutDescription, setAboutDescription] = useState([]);
+  const [aboutEducation, setAboutEducation] = useState([]);
+  const [aboutSkills, setAboutSkills] = useState([]);
 
-    try {
-      const response = await client.getEntries();
-      console.log(response);
+  useEffect(() => {
+    async function getContent() {
+      const client = createClient({
+        space: `${process.env.NEXT_PUBLIC_CONTENTFUL_API_SPACE}`,
+        environment: 'master', // defaults to 'master' if not set
+        accessToken: `${process.env.NEXT_PUBLIC_CONTENTFUL_API_KEY}`
+      })
 
-    } catch (error) {
-      console.log(error);
+      try {
+        const response = await client.getEntries();
+        // console.log(response);
+        console.log(response.items[0].fields);
+
+        const splitAboutDescriptionData = response.items[0].fields.description.split('\n\n');
+        const splitAboutEducationData = response.items[0].fields.education.split('\n');
+        const splitAboutSkillsData = response.items[0].fields.skills.split('\n');
+
+        console.log(splitAboutSkillsData);
+
+
+
+        setAboutDescription(splitAboutDescriptionData);
+        setAboutEducation(splitAboutEducationData);
+        setAboutSkills(splitAboutSkillsData);
+
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }
 
-  getContent();
+    getContent();
+  }, []);
 
-  // client.getEntries()
-  // .then((response) => console.log(response.items))
-  // .catch(console.error)
 
   return(
-    <div className={styles.scene}>
-      <div className={styles.testdiv}></div>
-      <Canvas shadows className={styles.canvas} camera={{ fov: 50, near: 0.1, far: 100, position: [-5.5, 0, -6] }}>
-        <Lights></Lights>
-        <Controls></Controls>
-        <Shape></Shape>
-        {/* <Shape2></Shape2> */}
-        <mesh position={[-1, 0, -5]} rotation-y={Math.PI * 1.26} rotation-x={Math.PI * -0}>
-          <Text2></Text2>
-          <Text1></Text1>
-        </mesh>
-        <Stats></Stats>
-      </Canvas>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore dolor dolores aliquam est ipsum illo pariatur, odit amet nesciunt repellendus. Laborum odit ratione quia quaerat temporibus quibusdam aspernatur voluptatum laudantium.</p>
-    </div>
+    <>
+      <section className={styles.landingSection}>
+        <HomeCanvas1></HomeCanvas1>
+      </section>
+      <section className={styles.aboutSection}>
+        <section className={styles.aboutSectionInfo}>
+          <section>
+            <h3>About?</h3>
+            {aboutDescription.map((paragraph) => {
+              return(
+                <p key={Math.random()}>{paragraph}</p>
+              )
+            })}
+          </section>
+          <section className={styles.aboutSectionInfoGreenBackgrounds}>
+            <h3>Education</h3>
+            <ul>
+              {aboutEducation.map((item) => {
+                return(
+                  <li key={Math.random()}>{item}</li>
+                )
+              })}
+            </ul>
+          </section>
+          <section className={styles.aboutSectionInfoGreenBackgrounds}>
+            <h3>Skills</h3>
+            <ul className={styles.skillsList}>
+              {aboutSkills.map((item) => {
+                return(
+                  <li key={Math.random()}>{item}</li>
+                )
+              })}
+            </ul>
+          </section>
+        </section>
+        <section>
+          <HomeCanvas2></HomeCanvas2>
+        </section>
+      </section>
+    </>
   )
 }
