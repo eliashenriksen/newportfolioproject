@@ -31,17 +31,17 @@
   flex-direction: column;
 }
 
-.aboutSectionInfoGreenBackgrounds {
+.greenBackgrounds {
   background-color: var(--primarygreen);
   box-shadow: 0px 5px 6px #00000045;
 }
 
-.aboutSectionInfoGreenBackgrounds li::selection, .aboutSectionInfoGreenBackgrounds h3::selection {
+.greenBackgrounds li::selection, .greenBackgrounds h3::selection {
   color: var(--primarygreen);
   background: var(--backgroundpurple);
 }
 
-.aboutSectionInfoGreenBackgrounds p, .aboutSectionInfoGreenBackgrounds h3, .aboutSectionInfoGreenBackgrounds ul {
+.greenBackgrounds p, .greenBackgrounds h3, .greenBackgrounds ul {
   color: var(--backgroundpurple);
 }
 
@@ -59,4 +59,8 @@
 .skillsList {
   column-count: 2;
   column-gap: 20px;
+}
+
+.portfolioSection {
+  height: 100vh;
 }

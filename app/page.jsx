@@ -61,7 +61,7 @@ export default function TestRoute() {
               )
             })}
           </section>
-          <section className={styles.aboutSectionInfoGreenBackgrounds}>
+          <section className={styles.greenBackgrounds }>
             <h3>Education</h3>
             <ul>
               {aboutEducation.map((item) => {
@@ -71,7 +71,7 @@ export default function TestRoute() {
               })}
             </ul>
           </section>
-          <section className={styles.aboutSectionInfoGreenBackgrounds}>
+          <section className={styles.greenBackgrounds }>
             <h3>Skills</h3>
             <ul className={styles.skillsList}>
               {aboutSkills.map((item) => {
@@ -85,6 +85,9 @@ export default function TestRoute() {
         <section>
           <HomeCanvas2></HomeCanvas2>
         </section>
+      </section>
+      <section className={styles.portfolioSection}>
+
       </section>
     </>
   )
