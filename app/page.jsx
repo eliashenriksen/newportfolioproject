@@ -4,6 +4,7 @@ import { createClient } from "contentful";
 import HomeCanvas1 from "@/components/threejs/homecanvas1/HomeCanvas1";
 import HomeCanvas2 from "@/components/threejs/homecanvas2/HomeCanvas2";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 
 export default function TestRoute() {
@@ -53,16 +54,16 @@ export default function TestRoute() {
       </section>
       <section className={styles.aboutSection}>
         <section className={styles.aboutSectionInfo}>
-          <section>
-            <h3>About?</h3>
+          <section className={styles.aboutSectionInfoDescription}>
+            <h2>About?</h2>
             {aboutDescription.map((paragraph) => {
               return(
                 <p key={Math.random()}>{paragraph}</p>
               )
             })}
           </section>
-          <section className={styles.greenBackgrounds }>
-            <h3>Education</h3>
+          <section>
+            <h2>Education</h2>
             <ul>
               {aboutEducation.map((item) => {
                 return(
@@ -71,8 +72,8 @@ export default function TestRoute() {
               })}
             </ul>
           </section>
-          <section className={styles.greenBackgrounds }>
-            <h3>Skills</h3>
+          <section>
+            <h2>Skills</h2>
             <ul className={styles.skillsList}>
               {aboutSkills.map((item) => {
                 return(
@@ -87,7 +88,8 @@ export default function TestRoute() {
         </section>
       </section>
       <section className={styles.portfolioSection}>
-
+        <h2>Portfolio</h2>
+        <div className={styles.portfolioProjectGrid}></div>
       </section>
     </>
   )

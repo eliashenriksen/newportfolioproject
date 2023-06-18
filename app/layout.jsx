@@ -1,9 +1,14 @@
+'use client'
 import './globals.css';
 import Link from "next/link";
 import styles from './layout.module.css';
 import localFont from 'next/font/local';
 import MobileNav from "@/components/navigation/mobile/MobileNav";
 import DesktopNav from "@/components/navigation/desktop/DesktopNav";
+import { useCallback } from "react";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+import particleOptions from "../public/particleOptions.json";
 
 
 
@@ -62,6 +67,16 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
+  const particlesInit = useCallback(async engine => {
+    console.log(engine);
+    await loadFull(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async container => {
+    await console.log(container);
+  }, []);
+
   return (
     <html lang="en" className={`${poppins.variable} ${nothingyoucoulddo.variable}`}>
       <body>
@@ -72,6 +87,7 @@ export default function RootLayout({ children }) {
         <main>
           {children}
         </main>
+        <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={particleOptions} />
       </body>
     </html>
   )
