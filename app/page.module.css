@@ -60,17 +60,12 @@
 
 .portfolioSection {
   height: 100vh;
-  padding-top: 10rem;
+  padding-top: 5rem;
 }
 
-.portfolioProjectCard {
-  max-width: 15rem;
-  padding: 1rem;
-}
-
-.portfolioProjectCard p {
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+.portfolioProjectGrid {
+  display: grid;
+  grid-template-columns: repeat(4 , 1fr);
+  gap: 1rem;
+  grid-auto-rows: 14rem;
 }

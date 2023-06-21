@@ -1,0 +1,27 @@
+.projectCard {
+  /* outline: 1px solid red; */
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0px 2px 6px #00000045;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectCardInfo {
+  background: var(--backgroundmaroongradient);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  min-height: 7rem;
+  width: 20rem;
+  z-index: 99;
+  position: absolute;
+  bottom: 0rem;
+  padding: 1rem;
+  margin: 0.5rem;
+}
+
+.projectCardInfo h3 {
+  font-size: 16px;
+}

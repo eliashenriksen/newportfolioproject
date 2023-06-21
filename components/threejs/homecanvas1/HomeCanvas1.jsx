@@ -1,3 +1,4 @@
+"use client"
 import { Canvas } from "@react-three/fiber"
 import { useEffect, useState } from "react";
 import Lights from "../Lights";
