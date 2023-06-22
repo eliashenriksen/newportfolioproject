@@ -26,7 +26,7 @@ async function getContent() {
   return data;
 }
 
-export default async function Home() {
+export default async function Page() {
   const response = await getContent();
 
   //Below, I am checking all the entries for a specific ID, which is the ID of the "About" entry to populate the About section of the portfolio website.
@@ -98,13 +98,14 @@ export default async function Home() {
             return(
               <ProjectCard
               key={project.sys.id}
-              title={project.fields.header1}
+              title={project.fields.title}
               date={project.fields.yearMade}
               image={project.fields.topMainImage}
               description={project.fields.projectDescription}>
               </ProjectCard>
             )
           })}
+          <ProjectCard title="Design Portfolio" image="/designportfoliocover.png"></ProjectCard>
         </div>
       </section>
     </>

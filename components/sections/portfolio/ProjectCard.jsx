@@ -16,7 +16,7 @@ export default function ProjectCard({ title, date, image, description }) {
         <h3>{title}</h3>
       </div>
       <Image
-        src={`https:${image.fields.file.url}`}
+        src={image.fields ? `https:${image.fields.file.url}` : `${image}`}
         fill
         alt={`An image of the ${title} project.`}
         style={imageStyle}>

@@ -9,11 +9,23 @@
   align-items: center;
 }
 
+.projectCard:hover {
+  cursor: pointer;
+  box-shadow: 0px 10px 10px #00000045;
+}
+
+.projectCard:hover .projectCardInfo h3 {
+  color: var(--primarygreen);
+}
+
 .projectCardInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--backgroundmaroongradient);
   backdrop-filter: blur(15px);
   border-radius: 20px;
-  min-height: 7rem;
+  min-height: 5rem;
   width: 20rem;
   z-index: 99;
   position: absolute;
@@ -24,4 +36,5 @@
 
 .projectCardInfo h3 {
   font-size: 16px;
+  color: white;
 }
