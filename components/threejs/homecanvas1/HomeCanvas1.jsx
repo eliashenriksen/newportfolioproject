@@ -30,7 +30,7 @@ export default function HomeCanvas1() {
   }, []);
 
   return(
-    <Canvas shadows camera={{ fov: 50, near: 0.1, far: 2000, position: [-5.5, -0.6, -6], zoom: 0.8 }}>
+    <Canvas shadows camera={{ fov: 50, near: 0.1, far: 2000, position: [-5.5, -0.6, -6], zoom: 0.8 }} dpr={[0.1, 0.6]}>
       <Lights></Lights>
       <HomeModel1></HomeModel1>
       {/* <Shape2></Shape2> */}
