@@ -75,7 +75,7 @@ export default async function Page({ params }) {
     <section className={styles.specificProjectHolder}>
       <section className={styles.specificProjectTopInfo}>
         <p>{response.fields.yearMade}</p>
-        <h1>{response.fields.title}</h1>
+        <h1>{response.fields.header}</h1>
       </section>
       <div className={styles.specificProjectImageWrapper}>
         <Image src={`https:${response.fields.topMainImage.fields.file.url}`} alt={`An image of the ${response.fields.title} project.`} fill style={imageStyle}></Image>

@@ -4,6 +4,11 @@ import HomeCanvas1 from "@/components/threejs/homecanvas1/HomeCanvas1";
 import HomeCanvas2 from "@/components/threejs/homecanvas2/HomeCanvas2";
 import ProjectCard from "@/components/sections/portfolio/ProjectCard";
 
+export const metadata = {
+  title: 'Elias Henriksen | Home',
+  description: 'Hi! Im Elias, a 27 year old designer and developer that appreciates clean, clever and aesthetic solutions.',
+}
+
 //Trying out the new NextJS 13 server component server side data fetching.
 async function getContent() {
   let data = "";

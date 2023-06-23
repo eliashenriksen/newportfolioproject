@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import './globals.css';
 import Link from "next/link";
 import styles from './layout.module.css';
@@ -59,12 +59,6 @@ const nothingyoucoulddo = localFont({
   ],
   variable: '--fontNothingYouCouldDo',
 });
-
-
-export const metadata = {
-  title: 'Elias Henriksen | Home',
-  description: 'Hi! Im Elias, a 27 year old designer and developer that appreciates clean, clever and aesthetic solutions.',
-}
 
 export default function RootLayout({ children }) {
 
