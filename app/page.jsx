@@ -16,7 +16,7 @@ async function getContent() {
 
   try {
     const response = await client.getEntries();
-    console.log(response);
+    // console.log(response);
     data = response;
 
   } catch (error) {
@@ -37,7 +37,7 @@ export default async function Page() {
   for (let i = 0; i < response.items.length; i++) {
     if (response.items[i].sys.id === "2eGTTG2psaSD2cCBtFQstE") {
       aboutData = response.items[i];
-      console.log("response loop:" ,response.items[i]);
+      // console.log("response loop:" ,response.items[i]);
     }
 
     if (response.items[i].sys.contentType.sys.id === "projectPost") {
@@ -45,7 +45,7 @@ export default async function Page() {
     }
   }
 
-  console.log("projects array here:", projectsArray);
+  // console.log("projects array here:", projectsArray);
 
   const splitAboutDescriptionData = aboutData.fields.description.split('\n\n');
   const splitAboutEducationData = aboutData.fields.education.split('\n');
@@ -101,11 +101,12 @@ export default async function Page() {
               title={project.fields.title}
               date={project.fields.yearMade}
               image={project.fields.topMainImage}
-              description={project.fields.projectDescription}>
+              description={project.fields.projectDescription}
+              link={`project/${project.sys.id}`}>
               </ProjectCard>
             )
           })}
-          <ProjectCard title="Design Portfolio" image="/designportfoliocover.png"></ProjectCard>
+          <ProjectCard title="Design Portfolio" date={2020} image="/designportfoliocover.png" link="https://www.dropbox.com/s/f1131k6zp37qi2e/MAPPE%20PORTEF%C3%98LJE%20elias%20henriksen.pdf?dl=0"></ProjectCard>
         </div>
       </section>
     </>

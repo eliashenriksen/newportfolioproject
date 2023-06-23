@@ -29,8 +29,6 @@
 .aboutSectionInfo {
   display: flex;
   flex-direction: column;
-  /* background-color: var(--backgroundmaroon); */
-  /* background: rgb(30, 19, 35); */
   background: var(--backgroundmaroongradient);
   border-radius: 20px;
   box-shadow: 0px 2px 6px #00000045;

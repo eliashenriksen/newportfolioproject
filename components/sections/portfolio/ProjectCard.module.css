@@ -9,9 +9,17 @@
   align-items: center;
 }
 
+.projectCard img {
+  transition: all 1s;
+}
+
 .projectCard:hover {
   cursor: pointer;
   box-shadow: 0px 10px 10px #00000045;
+}
+
+.projectCard:hover img {
+  transform: scale(1.2);
 }
 
 .projectCard:hover .projectCardInfo h3 {
@@ -20,8 +28,9 @@
 
 .projectCardInfo {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  flex-direction: column;
   background: var(--backgroundmaroongradient);
   backdrop-filter: blur(15px);
   border-radius: 20px;
@@ -32,6 +41,10 @@
   bottom: 0rem;
   padding: 1rem;
   margin: 0.5rem;
+}
+
+.projectCardInfo p {
+  margin: 0px;
 }
 
 .projectCardInfo h3 {

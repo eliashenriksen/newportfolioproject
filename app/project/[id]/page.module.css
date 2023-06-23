@@ -1,0 +1,154 @@
+.specificProjectHolder {
+  background: var(--backgroundmaroongradient);
+  border-radius: 20px;
+  box-shadow: 0px 2px 6px #00000045;
+  backdrop-filter: blur(5px);
+  border: var(--backgroundmaroonborder);
+  margin: 5rem 0rem 2rem 0rem;
+  padding: 5rem 2rem 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.specificProjectHolder a {
+  color: white;
+  position: relative;
+}
+
+.specificProjectHolder a::before {
+  position: absolute;
+  content: ">";
+  color: var(--primarygreen);
+  font-size: 16px;
+  font-weight: bold;
+  left: -12px;
+  /* animation: linkArrowMove 1s ease-in-out infinite alternate; */
+}
+
+.specificProjectHolder a:hover::before {
+  animation: linkArrowMove 1s ease-in-out infinite alternate;
+}
+
+.specificProjectHolder a:hover {
+  color: var(--primarygreen);
+}
+
+.specificProjectHolder ul {
+  margin: 2rem 0rem 2rem 1rem;
+}
+
+.specificProjectHolder li {
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.specificProjectTopInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.specificProjectTopInfo p {
+  align-self: flex-start;
+  margin: 0px 0px -0.6rem 0px;
+}
+
+.specificProjectTopInfo h1 {
+  margin-bottom: 2rem;
+}
+
+.specificProjectImageWrapper {
+  position: relative;
+  overflow: hidden;
+  height: 25rem;
+  width: 80%;
+  /* outline: 1px solid red; */
+}
+
+.specificProjectImageWrapper img {
+  border-radius: 20px;
+  box-shadow: 0px 2px 6px #00000045;
+  /* border: 2px solid var(--primarygreen); */
+  overflow: hidden;
+  object-position: top;
+}
+
+.specificProjectPageLinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.specificProjectPageMainContent {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* outline: 1px solid red; */
+}
+
+.specificProjectPageMainContentTopInfo {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  /* outline: 1px solid red; */
+}
+
+.specificProjectPageMainContentTopInfo div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.specificProjectMainContentDescription {
+  display: flex;
+  flex-direction: column;
+}
+
+.specificProjectMainContentDescription h2 {
+  margin-left: -1rem;
+}
+
+.specificProjectMainContentDescriptionHolder {
+  display: flex;
+  flex-direction: column;
+}
+
+.specificProjectMainContentDescriptionHolder a {
+  align-self: center;
+  justify-self: center;
+}
+
+.specificProjectMainContentTechstack, .specificProjectMainContentNotes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.specificProjectMainContentTechstack h2 {
+  margin: 2rem 0rem -2rem -1rem;
+}
+
+.specificProjectMainContentNotes h2 {
+  margin-left: -1rem;
+}
+
+@keyframes linkArrowMove {
+  0% {
+    left: -12px;
+  }
+  100% {
+    left: -16px;
+  }
+}
