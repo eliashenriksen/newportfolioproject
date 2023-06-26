@@ -35,12 +35,12 @@
   backdrop-filter: blur(15px);
   border-radius: 20px;
   min-height: 5rem;
-  width: 20rem;
+  width: 90%;
   z-index: 99;
   position: absolute;
   bottom: 0rem;
   padding: 1rem;
-  margin: 0.5rem;
+  margin: 0rem 5% 0.5rem 5%;
 }
 
 .projectCardInfo p {

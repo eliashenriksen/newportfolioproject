@@ -63,36 +63,38 @@ export default async function Page() {
       </section>
       <section className={styles.aboutSection}>
         <section className={styles.aboutSectionInfo}>
-          <section className={styles.aboutSectionInfoDescription}>
-            <h2>About?</h2>
-            {splitAboutDescriptionData.map((paragraph) => {
-              return(
-                <p key={Math.random()}>{paragraph}</p>
-              )
-            })}
-          </section>
-          <section>
-            <h2>Education</h2>
-            <ul>
-              {splitAboutEducationData.map((item) => {
+          <div className={styles.aboutSectionInfoWrapper}>
+            <section className={styles.aboutSectionInfoDescription}>
+              <h2>About?</h2>
+              {splitAboutDescriptionData.map((paragraph) => {
                 return(
-                  <li key={Math.random()}>{item}</li>
+                  <p key={Math.random()}>{paragraph}</p>
                 )
               })}
-            </ul>
-          </section>
-          <section>
-            <h2>Skills</h2>
-            <ul className={styles.skillsList}>
-              {splitAboutSkillsData.map((item) => {
-                return(
-                  <li key={Math.random()}>{item}</li>
-                )
-              })}
-            </ul>
-          </section>
+            </section>
+            <section>
+              <h2>Education</h2>
+              <ul>
+                {splitAboutEducationData.map((item) => {
+                  return(
+                    <li key={Math.random()}>{item}</li>
+                  )
+                })}
+              </ul>
+            </section>
+            <section>
+              <h2>Skills</h2>
+              <ul className={styles.skillsList}>
+                {splitAboutSkillsData.map((item) => {
+                  return(
+                    <li key={Math.random()}>{item}</li>
+                  )
+                })}
+              </ul>
+            </section>
+          </div>
         </section>
-        <section>
+        <section className={styles.aboutSectionCanvasHolder}>
           <HomeCanvas2></HomeCanvas2>
         </section>
       </section>

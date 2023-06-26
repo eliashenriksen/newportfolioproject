@@ -127,6 +127,7 @@
 .specificProjectMainContentDescriptionHolder a {
   align-self: center;
   justify-self: center;
+  margin-bottom: 2rem;
 }
 
 .specificProjectMainContentTechstack, .specificProjectMainContentNotes {

@@ -100,10 +100,24 @@ li::before {
   background: var(--primarygreen);
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1850px) {
   body {
     padding-left: 8rem;
     padding-right: 8rem;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  body {
+    padding-left: 7.5rem;
+    padding-right: 7.5rem;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  body {
+    padding-left: 7rem;
+    padding-right: 7rem;
   }
 }
 
