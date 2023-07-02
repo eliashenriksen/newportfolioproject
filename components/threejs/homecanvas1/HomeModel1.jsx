@@ -15,9 +15,9 @@ export default function HomeModel1() {
     <mesh ref={shapeRef} position={[-3.5, 0, -1]} rotation-x={Math.PI * 1.9} rotation-y={Math.PI * 0}>
       {/* <sphereGeometry args={[2, 32, 16]}></sphereGeometry> */}
       <Model></Model>
-      {/* <EffectComposer>
+      <EffectComposer>
         <ChromaticAberration offset={[0.002, -0.002]}></ChromaticAberration>
-      </EffectComposer> */}
+      </EffectComposer>
     </mesh>
   )
 }
