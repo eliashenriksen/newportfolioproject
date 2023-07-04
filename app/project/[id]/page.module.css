@@ -116,7 +116,7 @@
 }
 
 .specificProjectMainContentDescription h2 {
-  margin-left: -1rem;
+  /* margin-left: -1rem; */
 }
 
 .specificProjectMainContentDescriptionHolder {
@@ -134,15 +134,26 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
 }
+
+.specificProjectMainContentTechstack ul {
+  margin: 0rem;
+}
+
 .specificProjectMainContentTechstack h2 {
-  margin: 2rem 0rem -2rem -1rem;
+  margin-top: 2rem;
+}
+
+.specificProjectMainContentNotes {
+  margin-top: 2rem;
 }
 
 .specificProjectMainContentNotes h2 {
-  margin-left: -1rem;
+  align-self: flex-start;
+  justify-self: flex-start;
+  /* margin-left: -1rem; */
 }
 
 @keyframes linkArrowMove {

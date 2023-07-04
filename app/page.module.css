@@ -60,7 +60,7 @@
 }
 
 .aboutSectionInfoDescription p {
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
 }
 
 .skillsList {
@@ -68,9 +68,19 @@
   column-gap: 20px;
 }
 
+.resumeIcon {
+  font-size: 36px;
+  color: white;
+}
+
+.resumeIcon:hover {
+  color: var(--primarygreen);
+}
+
 .portfolioSection {
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 5rem;
+  margin-bottom: 2rem;
 }
 
 .portfolioProjectGrid {

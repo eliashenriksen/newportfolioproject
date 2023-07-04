@@ -9,6 +9,7 @@ import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import particleOptions from "../public/particleOptions.json";
+import { BsGithub, BsLinkedin, BsEnvelopeFill } from "react-icons/bs";
 
 
 
@@ -81,6 +82,17 @@ export default function RootLayout({ children }) {
         <main>
           {children}
         </main>
+        <footer className={styles.layoutFooter}>
+          <a href="https://github.com/eliashenriksen">
+            <BsGithub className={styles.footerIcons}></BsGithub>
+          </a>
+          <a href="https://www.linkedin.com/in/elias-henriksen-450244223/">
+            <BsLinkedin className={styles.footerIcons}></BsLinkedin>
+          </a>
+          <a href="mailto:elias.henriksen@hotmail.com">
+            <BsEnvelopeFill className={styles.footerIcons}></BsEnvelopeFill>
+          </a>
+        </footer>
         <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={particleOptions} />
       </body>
     </html>

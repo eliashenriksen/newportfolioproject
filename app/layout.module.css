@@ -3,3 +3,25 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.layoutFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.layoutFooter a {
+  display: flex;
+}
+
+.footerIcons {
+  color: white;
+  font-size: 36px;
+  margin: 0.5rem;
+}
+
+.footerIcons:hover {
+  color: var(--primarygreen);
+  cursor: pointer;
+}

@@ -79,7 +79,7 @@ ul {
   color: white;
   font-weight: 200;
   list-style: none;
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
   font-size: 14px;
   max-width: 35rem;
 }

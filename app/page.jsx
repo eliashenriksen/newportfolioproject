@@ -3,6 +3,7 @@ import { createClient } from "contentful";
 import HomeCanvas1 from "@/components/threejs/homecanvas1/HomeCanvas1";
 import HomeCanvas2 from "@/components/threejs/homecanvas2/HomeCanvas2";
 import ProjectCard from "@/components/sections/portfolio/ProjectCard";
+import { FaFileAlt } from "react-icons/fa";
 
 export const metadata = {
   title: 'Elias Henriksen | Home',
@@ -91,6 +92,12 @@ export default async function Page() {
                   )
                 })}
               </ul>
+            </section>
+            <section>
+              <h2>Resume</h2>
+              <a href="https://www.dropbox.com/s/y1isnrnmlv9x2t8/elias%20henriksen.pdf?dl=0">
+                <FaFileAlt className={styles.resumeIcon}></FaFileAlt>
+              </a>
             </section>
           </div>
         </section>
