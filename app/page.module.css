@@ -90,6 +90,21 @@
   grid-auto-rows: 14rem;
 }
 
+.contactSection {
+  min-height: 100vh;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fetchErrorHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15rem;
+}
+
 @media only screen and (max-width: 1600px) {
   .portfolioProjectGrid {
     grid-template-columns: repeat(3, 1fr);

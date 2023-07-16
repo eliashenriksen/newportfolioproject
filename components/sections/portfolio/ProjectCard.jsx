@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function ProjectCard({ title, date, image, description, link }) {
 
   // console.log("project card log:" ,"title", title, "date", date, "image", image, "description", description);
-  console.log("description>>>", description);
+  // console.log("description>>>", description);
 
   const imageStyle = {
     objectFit: "cover",

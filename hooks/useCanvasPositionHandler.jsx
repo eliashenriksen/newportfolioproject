@@ -13,31 +13,25 @@ export function useCanvasPositionHandler() {
     switch (true) {
       case (windowWidth >= 1850):
         setCanvas1Position([0, 2, 1]);
-        console.log("window width equal to or greater than 1850");
         break;
       
       case (windowWidth >= 1440 && windowWidth < 1850):
-        console.log("window width equal to 1440");
         setCanvas1Position([0, 0.5, 3]);
         break;
 
       case (windowWidth >= 992 && windowWidth < 1440):
-        console.log("window width equal to 1440");
         setCanvas1Position([0, 0, 4]);
         break;
 
       case (windowWidth >= 768 && windowWidth < 992):
-        console.log("window width equal to 1440");
         setCanvas1Position([0, 0, 5]);
         break;
 
       case (windowWidth >= 599 && windowWidth < 768):
-        console.log("window width equal to 1440");
         setCanvas1Position([0, 0, 6]);
         break;
       
       default:
-        console.log("default block");
         setCanvas1Position([0, -0.5, 8]);
         break;
     }

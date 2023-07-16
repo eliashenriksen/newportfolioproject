@@ -22,6 +22,8 @@ body {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   background-color: var(--backgroundpurple);
   background: rgb(36, 36, 56);
   background: linear-gradient(-90deg, rgba(36, 36, 56, 1) 20%, rgba(36, 58, 60, 1) 100%);

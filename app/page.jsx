@@ -4,6 +4,7 @@ import HomeCanvas1 from "@/components/threejs/homecanvas1/HomeCanvas1";
 import HomeCanvas2 from "@/components/threejs/homecanvas2/HomeCanvas2";
 import ProjectCard from "@/components/sections/portfolio/ProjectCard";
 import { FaFileAlt } from "react-icons/fa";
+import ContactForm from "@/components/forms/contactform/ContactForm";
 
 export const metadata = {
   title: 'Elias Henriksen | Home',
@@ -13,6 +14,7 @@ export const metadata = {
 //Trying out the new NextJS 13 server component server side data fetching.
 async function getContent() {
   let data = "";
+  let errorData = "";
 
   const client = createClient({
     space: `${process.env.NEXT_PUBLIC_CONTENTFUL_API_SPACE}`,
@@ -26,41 +28,65 @@ async function getContent() {
     data = response;
 
   } catch (error) {
-    console.log(error);
+    errorData = error;
+    // console.log(error);
   }
 
-  return data;
+  if (data) {
+    console.log("returning data::::::");
+    return data;
+  } else {
+    console.log("returning error:::::");
+    return errorData;
+  }
+
+  // return data;
 }
 
 export default async function Page() {
   const response = await getContent();
 
+  console.log("response:" ,response);
+
   //Below, I am checking all the entries for a specific ID, which is the ID of the "About" entry to populate the About section of the portfolio website.
   //In the same loop, I am also checking if an entry is of the type "projectPost", which means it must populate the project portfolio section of the website.
   let aboutData = "";
   const projectsArray = [];
+  let splitAboutDescriptionData = [];
+  let splitAboutEducationData = [];
+  let splitAboutSkillsData = [];
 
-  for (let i = 0; i < response.items.length; i++) {
-    if (response.items[i].sys.id === "2eGTTG2psaSD2cCBtFQstE") {
-      aboutData = response.items[i];
-      // console.log("response loop:" ,response.items[i]);
+  if (response.items) {
+    for (let i = 0; i < response.items.length; i++) {
+      if (response.items[i].sys.id === "2eGTTG2psaSD2cCBtFQstE") {
+        aboutData = response.items[i];
+        // console.log("response loop:" ,response.items[i]);
+      }
+  
+      if (response.items[i].sys.contentType.sys.id === "projectPost") {
+        projectsArray.push(response.items[i]);
+      }
     }
-
-    if (response.items[i].sys.contentType.sys.id === "projectPost") {
-      projectsArray.push(response.items[i]);
-    }
+  
+    // console.log("projects array here:", projectsArray);
+  
+    splitAboutDescriptionData = aboutData.fields.description.split('\n\n');
+    splitAboutEducationData = aboutData.fields.education.split('\n');
+    splitAboutSkillsData = aboutData.fields.skills.split('\n');
   }
 
-  // console.log("projects array here:", projectsArray);
-
-  const splitAboutDescriptionData = aboutData.fields.description.split('\n\n');
-  const splitAboutEducationData = aboutData.fields.education.split('\n');
-  const splitAboutSkillsData = aboutData.fields.skills.split('\n');
+  if (response.errno) {
+    return(
+      <div className={styles.fetchErrorHolder}>
+        <p>An error occured fetching the page data, please refresh and try again.</p>
+      </div>
+    )
+  }
 
   return(
     <>
       <section className={styles.landingSection}>
-        <HomeCanvas1></HomeCanvas1>
+        {/* <HomeCanvas1></HomeCanvas1> */}
       </section>
       <section className={styles.aboutSection}>
         <section className={styles.aboutSectionInfo}>
@@ -122,6 +148,9 @@ export default async function Page() {
           })}
           <ProjectCard title="Design Portfolio" date={2020} image="/designportfoliocover.png" link="https://www.dropbox.com/s/f1131k6zp37qi2e/MAPPE%20PORTEF%C3%98LJE%20elias%20henriksen.pdf?dl=0"></ProjectCard>
         </div>
+      </section>
+      <section className={styles.contactSection}>
+        <ContactForm></ContactForm>
       </section>
     </>
   )
