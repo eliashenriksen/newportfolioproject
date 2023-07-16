@@ -150,6 +150,7 @@ export default async function Page() {
         </div>
       </section>
       <section className={styles.contactSection}>
+        <h2>Contact me</h2>
         <ContactForm></ContactForm>
       </section>
     </>

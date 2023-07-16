@@ -26,13 +26,19 @@ export default function ContactForm() {
   return(
     <form className={styles.contactForm} onSubmit={handleSubmit(onSubmit)}>
       <fieldset>
-        {errors.name && <span>{errors.name.message}</span>}
+        <div>
+          {errors.name && <span>{errors.name.message}</span>}
+        </div>
         <input name="name" placeholder="Your name" {...register("name")} />
 
-        {errors.email && <span>{errors.email.message}</span>}
+        <div>
+          {errors.email && <span>{errors.email.message}</span>}
+        </div>
         <input name="email" placeholder="Your e-mail" {...register("email")} />
 
-        {errors.body && <span>{errors.body.message}</span>}
+        <div>
+          {errors.body && <span>{errors.body.message}</span>}
+        </div>
         <textarea name="body" placeholder="Your message" {...register("body")} />
 
         <button>Submit</button>

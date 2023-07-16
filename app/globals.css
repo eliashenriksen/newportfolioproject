@@ -44,6 +44,10 @@ body::-webkit-scrollbar-thumb {
   background: var(--primarygreen);
 }
 
+input, textarea, button {
+  font-family: var(--fontPoppins);
+}
+
 a {
   color: inherit;
   text-decoration: none;
