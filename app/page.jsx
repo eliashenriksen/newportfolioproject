@@ -102,7 +102,7 @@ export default async function Page() {
           </div>
         </section>
         <section className={styles.aboutSectionCanvasHolder}>
-          <HomeCanvas2></HomeCanvas2>
+          {/* <HomeCanvas2></HomeCanvas2> */}
         </section>
       </section>
       <section className={styles.portfolioSection}>

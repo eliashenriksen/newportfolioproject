@@ -93,7 +93,7 @@ export default function RootLayout({ children }) {
             <BsEnvelopeFill className={styles.footerIcons}></BsEnvelopeFill>
           </a>
         </footer>
-        <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={particleOptions} />
+        {/* <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={particleOptions} /> */}
       </body>
     </html>
   )

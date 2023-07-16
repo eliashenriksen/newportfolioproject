@@ -6,35 +6,79 @@ import Controls from "../Controls";
 import HomeModel1 from "./HomeModel1";
 import Text1 from "./Text1";
 import Text2 from "./Text2";
-import { Stats } from "@react-three/drei";
+import { Center, Stats } from "@react-three/drei";
+import { PerspectiveCamera } from "@react-three/drei";
+import { useCanvasPositionHandler } from "@/hooks/useCanvasPositionHandler";
 
 
 export default function HomeCanvas1() {
 
   const [movedX, setMovedX] = useState(0);
   const [movedY, setMovedY] = useState(0);
+  // const [canvas1Position, setCanvas1Position] = useState([-5.5, -0.6, -6]);
 
   function modelMoveFunction(event) {
     // console.log(event.clientX, event.clientY);
-    const compensatedX = (event.clientX - 1920 * 0.5) / 25000;
-    const compensatedY = (event.clientY - 1080 * 0.5) / 25000;
+    const compensatedX = (event.clientX - (window.innerWidth * 0.5)) / 20000;
+    const compensatedY = (event.clientY - (window.innerHeight * 0.5)) / 20000;
     setMovedX(compensatedX);
     setMovedY(compensatedY);
   }
 
+  // function canvasPositionHandler() {
+  //   const windowWidth = window.innerWidth;
+
+  //   switch (true) {
+  //     case (windowWidth >= 1850):
+  //       setCanvas1Position([0, 2, 2]);
+  //       console.log("window width equal to or greater than 1850");
+  //       console.log("canvas pos:", canvas1Position);
+  //       break;
+      
+  //     case (windowWidth >= 1440 && windowWidth < 1850):
+  //       console.log("window width equal to 1440");
+  //       setCanvas1Position([0, 0, 4]);
+  //       // console.log("canvas pos:", canvas1Position);
+  //       break;
+      
+  //     default:
+  //       console.log("default block");
+  //       setCanvas1Position([-5.5, -0.6, -6]);
+  //       // console.log("canvas pos:", canvas1Position);
+  //       break;
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   console.log("canvas 1 pos from useffect;" ,canvas1Position);
+  // }, [canvas1Position]);
+
   useEffect(() => {
+    // canvasPositionHandler();
     window.addEventListener("mousemove", modelMoveFunction);
+    // window.addEventListener("resize", canvasPositionHandler);
     return () => {
       window.removeEventListener("mousemove", modelMoveFunction);
+      // window.removeEventListener("resize", canvasPositionHandler);
     }
   }, []);
 
+  useEffect(() => {
+    console.log(movedX);
+  }, [movedX]);
+
+  const canvas1Position = useCanvasPositionHandler().canvas1Position;
+
+  //https://discourse.threejs.org/t/accessing-the-camera-in-react-three-fiber-out-of-the-canvas/39137/2
+  //https://github.com/pmndrs/drei#perspectivecamera
+  const cameraConfig = { fov: 50, near: 0.1, far: 2000, position: canvas1Position ? canvas1Position : [0, 0, 4], zoom: 0.8 };
+
   return(
-    <Canvas shadows camera={{ fov: 50, near: 0.1, far: 2000, position: [-5.5, -0.6, -6], zoom: 0.8 }} dpr={[1, 2]}>
+    <Canvas shadows dpr={[1, 2]}>
+      <PerspectiveCamera makeDefault {...cameraConfig}></PerspectiveCamera>
       <Lights></Lights>
       <HomeModel1></HomeModel1>
-      {/* <Shape2></Shape2> */}
-      <mesh position={[-1, movedY * 10, -5]} rotation-y={Math.PI * 1.26 - movedX} rotation-x={Math.PI * movedY}>
+      <mesh position={[-1, 2, -4]} rotation-y={Math.PI * -movedX} rotation-x={Math.PI * -movedY}>
         <Text2></Text2>
         <Text1></Text1>
       </mesh>
