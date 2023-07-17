@@ -63,10 +63,6 @@ export default function HomeCanvas1() {
     }
   }, []);
 
-  useEffect(() => {
-    console.log(movedX);
-  }, [movedX]);
-
   const canvas1Position = useCanvasPositionHandler().canvas1Position;
 
   //https://discourse.threejs.org/t/accessing-the-camera-in-react-three-fiber-out-of-the-canvas/39137/2

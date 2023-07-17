@@ -82,18 +82,18 @@ export default function RootLayout({ children }) {
         <main>
           {children}
         </main>
+        {/* <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={particleOptions} /> */}
         <footer className={styles.layoutFooter}>
-          <a href="https://github.com/eliashenriksen">
+          <a aria-label="GitHub Link" href="https://github.com/eliashenriksen">
             <BsGithub className={styles.footerIcons}></BsGithub>
           </a>
-          <a href="https://www.linkedin.com/in/elias-henriksen-450244223/">
+          <a aria-label="LinkedIn Link" href="https://www.linkedin.com/in/elias-henriksen-450244223/">
             <BsLinkedin className={styles.footerIcons}></BsLinkedin>
           </a>
-          <a href="mailto:elias.henriksen@hotmail.com">
+          <a aria-label="Email Link" href="mailto:elias.henriksen@hotmail.com">
             <BsEnvelopeFill className={styles.footerIcons}></BsEnvelopeFill>
           </a>
         </footer>
-        {/* <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={particleOptions} /> */}
       </body>
     </html>
   )

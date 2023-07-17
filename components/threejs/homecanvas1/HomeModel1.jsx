@@ -1,7 +1,8 @@
+"use client"
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import { EffectComposer, ChromaticAberration, Bloom } from "@react-three/postprocessing";
 import { Model } from "@/public/Landingpagemodel";
+import * as THREE from 'three';
 
 
 export default function HomeModel1() {
@@ -15,9 +16,6 @@ export default function HomeModel1() {
     <mesh ref={shapeRef} position={[1.5, 2, -4.5]} rotation-x={Math.PI * 1.9} rotation-y={Math.PI * 0}>
       {/* <sphereGeometry args={[2, 32, 16]}></sphereGeometry> */}
       <Model></Model>
-      {/* <EffectComposer>
-        <ChromaticAberration offset={[0.002, -0.002]}></ChromaticAberration>
-      </EffectComposer> */}
     </mesh>
   )
 }

@@ -33,20 +33,16 @@ async function getContent() {
   }
 
   if (data) {
-    console.log("returning data::::::");
     return data;
   } else {
-    console.log("returning error:::::");
     return errorData;
   }
-
-  // return data;
 }
 
 export default async function Page() {
   const response = await getContent();
 
-  console.log("response:" ,response);
+  // console.log("response:" ,response);
 
   //Below, I am checking all the entries for a specific ID, which is the ID of the "About" entry to populate the About section of the portfolio website.
   //In the same loop, I am also checking if an entry is of the type "projectPost", which means it must populate the project portfolio section of the website.
@@ -121,14 +117,14 @@ export default async function Page() {
             </section>
             <section>
               <h2>Resume</h2>
-              <a href="https://www.dropbox.com/s/y1isnrnmlv9x2t8/elias%20henriksen.pdf?dl=0">
+              <a aria-label="Resume Link" href="https://www.dropbox.com/s/y1isnrnmlv9x2t8/elias%20henriksen.pdf?dl=0">
                 <FaFileAlt className={styles.resumeIcon}></FaFileAlt>
               </a>
             </section>
           </div>
         </section>
         <section className={styles.aboutSectionCanvasHolder}>
-          {/* <HomeCanvas2></HomeCanvas2> */}
+          <HomeCanvas2></HomeCanvas2>
         </section>
       </section>
       <section className={styles.portfolioSection}>
