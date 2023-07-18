@@ -28,6 +28,7 @@
 }
 
 .aboutSection .aboutSectionCanvasHolder {
+  overflow: hidden;
   height: 1000px;
 }
 

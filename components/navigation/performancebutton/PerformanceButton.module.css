@@ -1,0 +1,28 @@
+.performanceButtonHolder {
+  position: relative;
+  /* outline: 1px solid red; */
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.performanceButtonHolder:hover {
+  cursor: pointer;
+  color: var(--primarygreen);
+}
+
+.performanceButtonHolder p {
+  position: absolute;
+  top: 40px;
+  font-size: 6px;
+}
+
+.imSlow {
+  color: white;
+}
+
+.imFast {
+  color: var(--primarygreen);
+}

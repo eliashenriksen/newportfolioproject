@@ -2,14 +2,20 @@
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 import { Model } from "@/public/Landingpagemodel";
-import * as THREE from 'three';
+import { useContext } from "react";
+import { PerformanceContext } from "@/app/layout";
 
 
 export default function HomeModel1() {
+
+  const {performanceMode, setPerformanceMode} = useContext(PerformanceContext);
+
   //https://codesandbox.io/s/github/onion2k/r3f-by-example/tree/develop/examples/hooks/rotating-cube
   const shapeRef = useRef();
   useFrame(() => {
-    shapeRef.current.rotation.y += 0.001;
+    if (performanceMode === false) {
+      shapeRef.current.rotation.y += 0.001;
+    }
   });
 
   return(

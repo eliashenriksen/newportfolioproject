@@ -2,6 +2,7 @@
 import styles from "./MobileNav.module.css";
 import Link from "next/link";
 import { useState } from "react";
+import PerformanceButton from "../performancebutton/PerformanceButton";
 
 export default function MobileNav() {
 
@@ -34,6 +35,7 @@ export default function MobileNav() {
           <Link onClick={delayedClose} href="/">About</Link>
           <Link onClick={delayedClose} href="/testroute">Portfolio</Link>
           <Link onClick={delayedClose} href="/">Contact</Link>
+          <PerformanceButton></PerformanceButton>
         </nav>
       </div>
     </>

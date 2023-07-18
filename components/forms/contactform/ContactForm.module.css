@@ -57,7 +57,6 @@
 .contactForm input:focus, .contactForm textarea:focus {
   background-color: rgba(255, 255, 255, 0.161);
   outline: none;
-  box-shadow: 0px 2px 6px #00000045;
 }
 
 .contactForm button {

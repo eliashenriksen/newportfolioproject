@@ -27,7 +27,7 @@ async function getContent(id) {
 export default async function Page({ params }) {
   const response = await getContent(params.id);
   // console.log("PARAMS:", params.id);
-  console.log("response for single entry:", response);
+  // console.log("response for single entry:", response);
   // console.log("description content:", response.fields.projectDescription.content);
 
   let projectDescription = "";

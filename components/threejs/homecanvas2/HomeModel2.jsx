@@ -1,37 +1,35 @@
 "use client"
-import { MeshTransmissionMaterial, MeshWobbleMaterial } from "@react-three/drei";
 import { useFrame, useLoader } from "@react-three/fiber";
-import { useRef } from "react";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { useRef, useContext } from "react";
 import { Model } from "@/public/Faceprofilewire";
-import { Text } from "@react-three/drei";
-import { useState } from "react";
-import { useEffect } from "react";
-import * as THREE from 'three';
+import { PerformanceContext } from "@/app/layout";
 
 
 export default function HomeModel2() {
 
+  const {performanceMode, setPerformanceMode} = useContext(PerformanceContext);
+
   //https://codesandbox.io/s/github/onion2k/r3f-by-example/tree/develop/examples/hooks/rotating-cube
   const shapeRef = useRef();
-
   let goBackwards = false;
 
   useFrame(() => {
-    if (goBackwards === false) {
-      shapeRef.current.rotation.y += 0.001;
-      // console.log("rotation current forwards Y:", shapeRef.current.rotation.y);
-
-      if (shapeRef.current.rotation.y.toFixed(1) == 0.6) {
-        goBackwards = true;
-      }
-      
-    } else if (goBackwards === true) {
-      shapeRef.current.rotation.y -= 0.001;
-      // console.log("rotation current backwards Y:", shapeRef.current.rotation.y);
-
-      if (shapeRef.current.rotation.y.toFixed(1) == -0.6) {
-        goBackwards = false;
+    if (performanceMode === false) {
+      if (goBackwards === false) {
+        shapeRef.current.rotation.y += 0.001;
+        // console.log("rotation current forwards Y:", shapeRef.current.rotation.y);
+  
+        if (shapeRef.current.rotation.y.toFixed(1) == 0.6) {
+          goBackwards = true;
+        }
+        
+      } else if (goBackwards === true) {
+        shapeRef.current.rotation.y -= 0.001;
+        // console.log("rotation current backwards Y:", shapeRef.current.rotation.y);
+  
+        if (shapeRef.current.rotation.y.toFixed(1) == -0.6) {
+          goBackwards = false;
+        }
       }
     }
   });

@@ -24,7 +24,7 @@
   transition: all 0.5s;
 }
 
-.mobileNav a {
+.mobileNav a, .mobileNav div {
   display: flex;
   align-items: center;
   justify-content: center;

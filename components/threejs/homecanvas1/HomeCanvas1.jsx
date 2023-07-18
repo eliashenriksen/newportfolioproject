@@ -25,34 +25,6 @@ export default function HomeCanvas1() {
     setMovedY(compensatedY);
   }
 
-  // function canvasPositionHandler() {
-  //   const windowWidth = window.innerWidth;
-
-  //   switch (true) {
-  //     case (windowWidth >= 1850):
-  //       setCanvas1Position([0, 2, 2]);
-  //       console.log("window width equal to or greater than 1850");
-  //       console.log("canvas pos:", canvas1Position);
-  //       break;
-      
-  //     case (windowWidth >= 1440 && windowWidth < 1850):
-  //       console.log("window width equal to 1440");
-  //       setCanvas1Position([0, 0, 4]);
-  //       // console.log("canvas pos:", canvas1Position);
-  //       break;
-      
-  //     default:
-  //       console.log("default block");
-  //       setCanvas1Position([-5.5, -0.6, -6]);
-  //       // console.log("canvas pos:", canvas1Position);
-  //       break;
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   console.log("canvas 1 pos from useffect;" ,canvas1Position);
-  // }, [canvas1Position]);
-
   useEffect(() => {
     // canvasPositionHandler();
     window.addEventListener("mousemove", modelMoveFunction);

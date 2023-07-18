@@ -82,7 +82,7 @@ export default async function Page() {
   return(
     <>
       <section className={styles.landingSection}>
-        {/* <HomeCanvas1></HomeCanvas1> */}
+        <HomeCanvas1></HomeCanvas1>
       </section>
       <section className={styles.aboutSection}>
         <section className={styles.aboutSectionInfo}>

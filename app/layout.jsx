@@ -5,11 +5,12 @@ import styles from './layout.module.css';
 import localFont from 'next/font/local';
 import MobileNav from "@/components/navigation/mobile/MobileNav";
 import DesktopNav from "@/components/navigation/desktop/DesktopNav";
-import { useCallback } from "react";
+import { createContext, useCallback, useEffect, useState, useContext } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import particleOptions from "../public/particleOptions.json";
 import { BsGithub, BsLinkedin, BsEnvelopeFill } from "react-icons/bs";
+import { useRef } from 'react';
 
 
 
@@ -61,7 +62,11 @@ const nothingyoucoulddo = localFont({
   variable: '--fontNothingYouCouldDo',
 });
 
+export const PerformanceContext = createContext();
+
 export default function RootLayout({ children }) {
+
+  const [performanceMode, setPerformanceMode] = useState(false);
 
   const particlesInit = useCallback(async engine => {
     console.log(engine);
@@ -69,32 +74,46 @@ export default function RootLayout({ children }) {
   }, []);
 
   const particlesLoaded = useCallback(async container => {
-    await console.log(container);
+    await console.log("tsparticles container:", container);
   }, []);
+
+  const containerRef = useRef();
+
+  useEffect(() => {
+    if (containerRef && containerRef.current) {
+      if (performanceMode === true) {
+        containerRef.current.pause();
+      } else if (performanceMode === false) {
+        containerRef.current.play();
+      }
+    }
+  }, [performanceMode]);
 
   return (
     <html lang="en" className={`${poppins.variable} ${nothingyoucoulddo.variable}`}>
-      <body>
-        <MobileNav></MobileNav>
-        <header className={styles.topLevelHeader}>
-          <DesktopNav></DesktopNav>
-        </header>
-        <main>
-          {children}
-        </main>
-        {/* <Particles id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={particleOptions} /> */}
-        <footer className={styles.layoutFooter}>
-          <a aria-label="GitHub Link" href="https://github.com/eliashenriksen">
-            <BsGithub className={styles.footerIcons}></BsGithub>
-          </a>
-          <a aria-label="LinkedIn Link" href="https://www.linkedin.com/in/elias-henriksen-450244223/">
-            <BsLinkedin className={styles.footerIcons}></BsLinkedin>
-          </a>
-          <a aria-label="Email Link" href="mailto:elias.henriksen@hotmail.com">
-            <BsEnvelopeFill className={styles.footerIcons}></BsEnvelopeFill>
-          </a>
-        </footer>
-      </body>
+      <PerformanceContext.Provider value={{ performanceMode, setPerformanceMode }}>
+        <body>
+          <MobileNav></MobileNav>
+          <header className={styles.topLevelHeader}>
+            <DesktopNav></DesktopNav>
+          </header>
+          <main>
+            {children}
+          </main>
+          <Particles container={containerRef} id="tsparticles" init={particlesInit} loaded={particlesLoaded} options={particleOptions} />
+          <footer className={styles.layoutFooter}>
+            <a aria-label="GitHub Link" href="https://github.com/eliashenriksen">
+              <BsGithub className={styles.footerIcons}></BsGithub>
+            </a>
+            <a aria-label="LinkedIn Link" href="https://www.linkedin.com/in/elias-henriksen-450244223/">
+              <BsLinkedin className={styles.footerIcons}></BsLinkedin>
+            </a>
+            <a aria-label="Email Link" href="mailto:elias.henriksen@hotmail.com">
+              <BsEnvelopeFill className={styles.footerIcons}></BsEnvelopeFill>
+            </a>
+          </footer>
+        </body>
+      </PerformanceContext.Provider>
     </html>
   )
 }
