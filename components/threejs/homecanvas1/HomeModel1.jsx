@@ -12,6 +12,7 @@ export default function HomeModel1() {
 
   //https://codesandbox.io/s/github/onion2k/r3f-by-example/tree/develop/examples/hooks/rotating-cube
   const shapeRef = useRef();
+  
   useFrame(() => {
     if (performanceMode === false) {
       shapeRef.current.rotation.y += 0.001;

@@ -26,7 +26,6 @@ export default function HomeCanvas1() {
   }
 
   useEffect(() => {
-    // canvasPositionHandler();
     window.addEventListener("mousemove", modelMoveFunction);
     // window.addEventListener("resize", canvasPositionHandler);
     return () => {
