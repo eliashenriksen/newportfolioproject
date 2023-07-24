@@ -1,7 +1,7 @@
 "use client"
 import styles from "./page.module.css";
 import { createClient } from "contentful";
-import HomeCanvas1 from "@/components/threejs/homecanvas1/HomeCanvas1";
+import HomeCanvas1 from "@/components/threejs/homecanvas/HomeCanvas";
 import HomeCanvas2 from "@/components/threejs/homecanvas2/HomeCanvas2";
 import { useEffect, useState } from "react";
 import Image from "next/image";

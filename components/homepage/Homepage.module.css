@@ -1,0 +1,150 @@
+.landingSection {
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* outline: 1px solid rgb(60, 255, 0); */
+}
+
+.aboutSection {
+  min-height: 100vh;
+  height: 100%;
+  /* outline: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.aboutSection section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.aboutSection .aboutSectionCanvasHolder {
+  overflow: hidden;
+  height: 1000px;
+}
+
+.aboutSectionInfo {
+  display: flex;
+  flex-direction: column;
+  background: var(--backgroundmaroongradient);
+  border-radius: 20px;
+  box-shadow: 0px 2px 6px #00000045;
+  backdrop-filter: blur(5px);
+  border: var(--backgroundmaroonborder);
+}
+
+.aboutSectionInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutSectionInfo section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  /* margin-bottom: 1rem; */
+  /* outline: 1px solid magenta; */
+  /* outline: 5px solid var(--primarygreen); */
+}
+
+.skillsList {
+  column-count: 2;
+  column-gap: 20px;
+}
+
+.resumeIcon {
+  font-size: 36px;
+  color: white;
+}
+
+.resumeIcon:hover {
+  color: var(--primarygreen);
+}
+
+.portfolioSection {
+  min-height: 100vh;
+  padding-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.portfolioSection h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.portfolioProjectGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  grid-auto-rows: 14rem;
+}
+
+.contactSection {
+  min-height: 100vh;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.contactSection h2 {
+  margin-bottom: 1rem;
+}
+
+.fetchErrorHolder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15rem;
+}
+
+@media only screen and (max-width: 1600px) {
+  .portfolioProjectGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media only screen and (max-width: 1400px) {
+  .aboutSection {
+    flex-direction: column;
+  }
+
+  .aboutSection .aboutSectionCanvasHolder {
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .portfolioProjectGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 992px) {}
+
+@media only screen and (max-width: 768px) {
+  .portfolioProjectGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media only screen and (max-width: 576px) {}

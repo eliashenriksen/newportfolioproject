@@ -6,7 +6,7 @@ import Controls from "../Controls";
 import HomeModel1 from "./HomeModel1";
 import Text1 from "./Text1";
 import Text2 from "./Text2";
-import { Center, Stats } from "@react-three/drei";
+import { Center, Stats, View } from "@react-three/drei";
 import { PerspectiveCamera } from "@react-three/drei";
 import { useCanvasPositionHandler } from "@/hooks/useCanvasPositionHandler";
 
@@ -42,6 +42,7 @@ export default function HomeCanvas1() {
 
   return(
     <Canvas shadows dpr={[1, 2]}>
+      <View></View>
       <PerspectiveCamera makeDefault {...cameraConfig}></PerspectiveCamera>
       <Lights></Lights>
       <HomeModel1></HomeModel1>
