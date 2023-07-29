@@ -15,10 +15,10 @@ export default function Homepage({ splitAboutDescriptionData, splitAboutEducatio
 
   return(
     <>
-      <section className={styles.landingSection}>
+      <section id="landingSectionID" className={styles.landingSection}>
         <HomeCanvas containerRef={containerRef} view1Ref={view1Ref} view2Ref={view2Ref}></HomeCanvas>
       </section>
-      <section className={styles.aboutSection}>
+      <section id="aboutSectionID" className={styles.aboutSection}>
         <section className={styles.aboutSectionInfo}>
           <div className={styles.aboutSectionInfoWrapper}>
             <section className={styles.aboutSectionInfoDescription}>
@@ -61,7 +61,7 @@ export default function Homepage({ splitAboutDescriptionData, splitAboutEducatio
           <HomeScene2 view2Ref={view2Ref}></HomeScene2>
         </section>
       </section>
-      <section className={styles.portfolioSection}>
+      <section id="portfolioSectionID" className={styles.portfolioSection}>
         <h2>Portfolio</h2>
         <div className={styles.portfolioProjectGrid}>
           {projectsArray.map((project) => {
@@ -79,7 +79,7 @@ export default function Homepage({ splitAboutDescriptionData, splitAboutEducatio
           <ProjectCard title="Design Portfolio" date={2020} image="/designportfoliocover.png" link="https://www.dropbox.com/s/f1131k6zp37qi2e/MAPPE%20PORTEF%C3%98LJE%20elias%20henriksen.pdf?dl=0"></ProjectCard>
         </div>
       </section>
-      <section className={styles.contactSection}>
+      <section id="contactSectionID" className={styles.contactSection}>
         <h2>Contact me</h2>
         <ContactForm></ContactForm>
       </section>

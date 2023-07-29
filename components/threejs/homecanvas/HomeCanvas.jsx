@@ -37,7 +37,7 @@ export default function HomeCanvas({ containerRef, view1Ref, view2Ref}) {
 
   const camera1Position = useCanvasPositionHandler().camera1Position;
   const camera2Position = useCanvasPositionHandler().camera2Position;
-  const canvas2DPR = useCanvasPositionHandler().canvas2DPR;
+  const canvas1DPR = useCanvasPositionHandler().canvas1DPR;
 
   //https://discourse.threejs.org/t/accessing-the-camera-in-react-three-fiber-out-of-the-canvas/39137/2
   //https://github.com/pmndrs/drei#perspectivecamera
@@ -47,7 +47,7 @@ export default function HomeCanvas({ containerRef, view1Ref, view2Ref}) {
   return(
     <div ref={containerRef}>
       <HomeScene1 view1Ref={view1Ref}></HomeScene1>
-      <Canvas eventSource={containerRef} shadows dpr={canvas2DPR} className={styles.canvas}>
+      <Canvas eventSource={containerRef} shadows dpr={canvas1DPR} className={styles.canvas}>
         <View track={view1Ref}>
           <PerspectiveCamera makeDefault {...camera1Config}></PerspectiveCamera>
           <Lights></Lights>

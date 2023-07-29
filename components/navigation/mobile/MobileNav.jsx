@@ -31,10 +31,10 @@ export default function MobileNav() {
       </div>
       <div className={styles.mobileNavHolder} style={{visibility: toggled ? "visible" : "hidden", opacity: toggled ? "100" : "0"}}>
         <nav className={styles.mobileNav} style={{marginRight: toggled ? "0rem" : "100rem"}}>
-          <Link onClick={delayedClose} href="/">Home</Link>
-          <Link onClick={delayedClose} href="/">About</Link>
-          <Link onClick={delayedClose} href="/testroute">Portfolio</Link>
-          <Link onClick={delayedClose} href="/">Contact</Link>
+          <Link onClick={delayedClose} href="#landingSectionID">Home</Link>
+          <Link onClick={delayedClose} href="#aboutSectionID">About</Link>
+          <Link onClick={delayedClose} href="#portfolioSectionID">Portfolio</Link>
+          <Link onClick={delayedClose} href="#contactSectionID">Contact</Link>
           <PerformanceButton></PerformanceButton>
         </nav>
       </div>

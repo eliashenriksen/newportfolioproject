@@ -6,10 +6,10 @@ export default function DesktopNav() {
 
   return(
     <nav className={styles.desktopNav}>
-      <Link href="/">Home</Link>
-      <Link href="/">About</Link>
-      <Link href="/testroute">Portfolio</Link>
-      <Link href="/">Contact</Link>
+      <Link href="#landingSectionID">Home</Link>
+      <Link href="#aboutSectionID">About</Link>
+      <Link href="#portfolioSectionID">Portfolio</Link>
+      <Link href="#contactSectionID">Contact</Link>
       <PerformanceButton></PerformanceButton>
     </nav>
   )
