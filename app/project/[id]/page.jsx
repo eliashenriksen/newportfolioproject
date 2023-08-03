@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-async function getContent(id) {
+export async function getContent(id) {
   let data = "";
 
   const client = createClient({

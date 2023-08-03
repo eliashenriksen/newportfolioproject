@@ -8,7 +8,7 @@ export function useCanvasPositionHandler() {
   const [canvas1DPR, setcanvas1DPR] = useState([1, 2]);
   const [canvasPositionReturn, setCanvasPositionReturn] = useState({});
 
-  function responsiveCanvasPositionHandler(event) {
+  function responsiveCanvasPositionHandler() {
     const windowWidth = window.innerWidth;
 
     switch (true) {
