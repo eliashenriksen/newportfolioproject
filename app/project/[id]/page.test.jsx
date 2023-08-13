@@ -1,4 +1,5 @@
 import { getContent } from "./page.jsx";
+import { render, screen} from "@testing-library/react";
 
 describe("getContent", () => {
   it("Correctly returns single entry data from Contentful client when provided with a VALID entry ID (exists).", async () => {
