@@ -24,6 +24,16 @@ export async function getContent(id) {
   return data;
 }
 
+export async function generateMetadata({ params }) {
+  const response = await getContent(params.id);
+
+  return {
+    title: `Elias Henriksen | ${response.fields.header}`,
+    description: `Project page for the ${response.fields.header} project.`
+  }
+
+}
+
 export default async function Page({ params }) {
   const response = await getContent(params.id);
   // console.log("PARAMS:", params.id);

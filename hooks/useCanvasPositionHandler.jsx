@@ -40,9 +40,15 @@ export function useCanvasPositionHandler() {
         setcamera2Position([0, 0, 3.5]);
         setcanvas1DPR([0.3, 1.3]);
         break;
+
+      case (windowWidth >= 200 && windowWidth < 599):
+        setcamera1Position([0, 0, 8]);
+        setcamera2Position([0, 0, 3.5]);
+        setcanvas1DPR([0.3, 1.3]);
+        break;
       
       default:
-        setcamera1Position([0, 0, 6]);
+        setcamera1Position([0, 0, 8]);
         setcamera2Position([0, 0, 3.5]);
         setcanvas1DPR([0.3, 1.3]);
         break;
