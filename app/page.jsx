@@ -1,4 +1,3 @@
-import styles from "./page.module.css";
 import { createClient } from "contentful";
 import Homepage from "@/components/homepage/Homepage";
 
