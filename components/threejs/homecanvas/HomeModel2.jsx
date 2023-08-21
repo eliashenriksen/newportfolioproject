@@ -17,8 +17,8 @@ export default function HomeModel2() {
     if (performanceMode === false) {
       if (goBackwards === false) {
         shapeRef.current.rotation.y += 0.001;
-        console.log("rotation current forwards Y:", shapeRef.current.rotation.y);
-        console.log("goBackwards? :", goBackwards);
+        // console.log("rotation current forwards Y:", shapeRef.current.rotation.y);
+        // console.log("goBackwards? :", goBackwards);
   
         if (shapeRef.current.rotation.y.toFixed(1) == 0.6 || shapeRef.current.rotation.y.toFixed(1) > 0.6) {
           goBackwards = true;
@@ -26,8 +26,8 @@ export default function HomeModel2() {
         
       } else if (goBackwards === true) {
         shapeRef.current.rotation.y -= 0.001;
-        console.log("rotation current backwards Y:", shapeRef.current.rotation.y);
-        console.log("goBackwards? :", goBackwards);
+        // console.log("rotation current backwards Y:", shapeRef.current.rotation.y);
+        // console.log("goBackwards? :", goBackwards);
   
         if (shapeRef.current.rotation.y.toFixed(1) == -0.6 || shapeRef.current.rotation.y.toFixed(1) < -0.6) {
           goBackwards = false;
