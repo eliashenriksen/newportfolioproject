@@ -20,20 +20,20 @@ export default function HomeCanvas({ containerRef, view1Ref, view2Ref}) {
   const [movedY, setMovedY] = useState(0);
 
 
-  // function modelMoveFunction(event) {
-  //   // console.log(event.clientX, event.clientY);
-  //   const compensatedX = (event.clientX - (window.innerWidth * 0.5)) / 20000;
-  //   const compensatedY = (event.clientY - (window.innerHeight * 0.5)) / 20000;
-  //   setMovedX(compensatedX);
-  //   setMovedY(compensatedY);
-  // }
+  function modelMoveFunction(event) {
+    // console.log(event.clientX, event.clientY);
+    const compensatedX = (event.clientX - (window.innerWidth * 0.5)) / 20000;
+    const compensatedY = (event.clientY - (window.innerHeight * 0.5)) / 20000;
+    setMovedX(compensatedX);
+    setMovedY(compensatedY);
+  }
 
-  // useEffect(() => {
-  //   window.addEventListener("mousemove", modelMoveFunction);
-  //   return () => {
-  //     window.removeEventListener("mousemove", modelMoveFunction);
-  //   }
-  // }, []);
+  useEffect(() => {
+    window.addEventListener("mousemove", modelMoveFunction);
+    return () => {
+      window.removeEventListener("mousemove", modelMoveFunction);
+    }
+  }, []);
 
   const camera1Position = useCanvasPositionHandler().camera1Position;
   const camera2Position = useCanvasPositionHandler().camera2Position;
