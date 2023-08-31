@@ -91,6 +91,7 @@ export default async function Page({ params }) {
         <Image src={`https:${response.fields.topMainImage.fields.file.url}`} alt={`An image of the ${response.fields.title} project.`} fill style={imageStyle}></Image>
       </div>
       <section className={styles.specificProjectPageLinks}>
+        {response.fields.notMaintained ? <p className={styles.specificProjectPageNotMaintained}>{response.fields.notMaintained}</p> : ""}
         {response.fields.linkLivepage ? <Link href={response.fields.linkLivepage}>Link to live page</Link> : ""}
         <Link href={response.fields.linkGithub}>Link to GitHub page</Link>
       </section>

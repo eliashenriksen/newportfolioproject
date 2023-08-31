@@ -84,6 +84,11 @@
   margin-top: 2rem;
 }
 
+.specificProjectPageNotMaintained {
+  color: red;
+  font-weight: bold;
+}
+
 .specificProjectPageMainContent {
   /* width: 100%; */
   display: flex;
